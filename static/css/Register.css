@@ -1,0 +1,142 @@
+body {
+    font-family: 'Noto Sans', sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+    animation: gradientBackground 10s ease infinite;
+    background-image: linear-gradient(135deg, #111, #000);
+    background-size: 200% 200%;
+}
+
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.navbar {
+    background-color: #111;
+    padding: 10px 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.navbar-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-menu li {
+    margin-right: 20px;
+}
+
+.navbar-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.navbar-menu a:hover {
+    color: #aaa;
+}
+
+.Midle {
+    max-width: 500px;
+    margin: 0 auto;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    animation: slideInLeft 0.5s ease;
+}
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+label {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+input[type="text"],
+input[type="password"] {
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #888;
+    background-color: #333;
+    color: #fff;
+    animation: fadeIn 0.5s ease;
+}
+
+.registerbtn {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 10px;
+    border-radius: 5px;
+    animation: slideInRight 0.5s ease;
+}
+
+.registerbtn:hover {
+    background-color: #777;
+}
+
+.registerbtn:focus {
+    outline: none;
+    box-shadow: 0 0 5px #888;
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

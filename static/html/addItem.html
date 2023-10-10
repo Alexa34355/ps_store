@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+	    <title>Add</title>
+        <link rel="stylesheet" type="text/css" href="static/css/additem.css">
+    </head>
+    <body>
+        <form action="/add_product" method="POST" enctype="multipart/form-data">
+            Name: <br> <textarea name="name" cols="30" rows="4"></textarea><br>
+            Description: <br> <textarea name="description" cols="40" rows="7"></textarea> <br>
+            Cost: <input type="text" name="cost"> <br>
+            IMG: <input type="file" accept="image/jpeg,image/png,image/gif" name="img" multiple> <br>
+            Category: <select name="category" id="">
+                <option value="notSelected" selected>Not selected...</option>
+                <option value="Frame">Action</option>
+                <option value="Motherboard">Fighting</option>
+                <option value="CPU">Adventure</option>
+                <option value="RAM">Single Player</option>
+                <option value="SSD/Hard disk">Multiplayer</option>
+                <option value="Power Unit">Shooter</option>
+                <option value="GPU">MOBA</option>
+                <option value="Сooler">Role-plaing</option>
+            </select>
+            <br>
+            <input type="submit" value="ADD PRODUCT">
+        </form>
+    </body>
+</html>

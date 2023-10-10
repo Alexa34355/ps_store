@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Корзина</title>
+        
+            <meta charset="utf-8">
+           
+            <link rel="stylesheet" type="text/css" href="static/css/trash.css">
+        
+    </head>
+    <body>
+
+        <h2>Your Cart</h2>
+            {{ range .MyCart }}
+                <div class="product-in-cart">
+                    <div class="delete">
+                        <form action="/Cart" method="GET">
+                            <button name="deleteProductFromCart" value="{{ .ID }}">X</button>
+                        </form>
+                    </div>
+                    
+                    <div class="information">                    
+                        {{ .Name }} <br>
+                        <b>{{ .Cost }}p.</b>
+                    </div>
+                    
+                </div>
+            {{ end }}
+
+            <div class="total-cost">
+                {{ if eq .TotalCost 0.00 }}
+                    <p>Cart is empty</p>
+                {{ else }}
+                    <p>TOTAL: <b>{{ .TotalCost }}p.</b></p>
+                    <form action="/" method="GET">
+                        <button class="make-order" name="makeOrder" value="order">MAKE ORDER</button>
+                    </form>
+                {{ end }}
+            </div>
+        </div>
+
+    </body>
+</html>

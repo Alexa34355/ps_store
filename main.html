@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>PlayStation</title>
+	<link rel="stylesheet" type="text/css" href="static/css/main.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Bootstrap reboot (для сброса стилей) -->
+	<link rel="stylesheet" href="static/libs/bootstrap-reboot.min.css">
+
+	<!-- Bootstrap сетка -->
+	<link rel="stylesheet" href="static/libs/bootstrap-grid.min.css">
+
+	<!-- Шрифты с Google Fonts -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		rel="stylesheet">
+
+	<!-- Стили сайта -->
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+	<nav class="navbar">
+		<div class="container">
+			<a href="main.html" class="navbar-brand">PlayStation</a>
+			<div class="nawbar-wrap">
+				<ul class="navbar-menu">
+					<li>
+						<div class="content">
+							<div class="dropdown">
+								
+								<div id="dropdown" class="dropdown-menu">
+									<a href="/register" class="dropdown-link">Registration</a>
+									<a href="/login" class="dropdown-link">Sing In</a>
+									<a href="/logout" class="dropdown-link">Exit</a>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li><a href="/Cart">Trash</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<header class="Midle" style="background-image: url('static/img/MainImgg.jpg');">
+		<!-- Основная информаия о сайте -->
+		<H1>Buy any PlayStation game</H1>
+	</header>
+
+
+	<div class = "Down">
+		<H1>Games</H1>
+		{{ if .IsPrivilege }}
+			<p>{{ .UserName }}</p>
+			<a href="add_product"><button type="submit" class="registerbtn">Add</button></a>
+		{{ end }}
+ 	</div>
+
+	 {{ range .Products }}
+	 <div class = "ProductField">
+		  <H1>{{ .Name }}</H1>
+		  <p>{{ .Description }}</p>
+		  <div class="img">
+		  <img src="/static/img/{{ .IMG }}" alt="IMG">
+		  </div>
+		  <h2>{{ .Cost }} p.</h2>
+		  <form method="GET" action="/">
+		  {{ if $.IsLogin }}
+		  	<button type="submit" class="registerbtn" value="{{ .ID }}" name="cart"><h3>Add to trash</h3></button>
+		  {{ end }}
+		  {{ if $.IsPrivilege }}
+		  	<button type="submit" class="registerbtn" name="edit" value="{{ .ID }}">Edit</button>
+		  	<button type="submit" class="registerbtn" name="removeProduct" value="{{ .ID }}"><h3>Delete</h3></button>
+		  {{ end }}
+		  </form>
+	 </div> 
+	 {{ end }}   
+
+
+	<script>
+
+		!function () { "use strict"; document.addEventListener("click", function (t) { const e = t.target.closest("[data-easy-toggle]"); if (e) { t.preventDefault(); let a = e.getAttribute("data-easy-toggle"), s = e.getAttribute("data-easy-class"); try { document.querySelectorAll("[data-easy-toggle]").forEach(t => { t.hasAttribute("data-easy-parallel") || t === e || document.querySelector(t.getAttribute("data-easy-toggle")).classList.remove(t.getAttribute("data-easy-class")) }), document.querySelector(a).classList.toggle(s) } catch (t) { console.warn("EasyToggler.js : Блок " + a + " не существует") } } if (!e) { let e = document.querySelectorAll("[data-easy-rcoe]"); Array.from(e).forEach.call(e, function (e) { let a = e.getAttribute("data-easy-toggle"), s = e.getAttribute("data-easy-class"); if (!t.target.closest(a)) try { document.querySelector(a).classList.remove(s) } catch (t) { console.warn("EasyToggler.js : Блок " + a + " не существует") } }) } }) }();
+	</script>
+
+	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

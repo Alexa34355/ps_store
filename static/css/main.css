@@ -1,0 +1,201 @@
+/* Основные стили */
+body {
+    font-family: 'Noto Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #111, #000);
+    color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Навигационное меню */
+.navbar {
+    background-color: #222;
+    color: #fff;
+    padding: 10px;
+}
+
+.navbar-brand {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navbar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-menu li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.navbar-menu li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Заголовок */
+.Midle {
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 100px 0;
+    color: #fff;
+}
+
+.Midle h1 {
+    font-size: 48px;
+    margin: 0;
+    animation: fade-in 2s ease-in-out;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Секция игр */
+.Down {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.Down h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.ProductField {
+    padding: 40px;
+    text-align: center;
+    background-color: #333;
+    margin-bottom: 20px;
+}
+
+.ProductField h1 {
+    font-size: 24px;
+    margin: 0;
+    color: #fff;
+    animation: slide-up 1s ease-in-out;
+}
+
+@keyframes slide-up {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.ProductField p {
+    margin: 10px 0;
+    animation: fade-in 1s ease-in-out;
+    color: #fff;
+}
+
+.ProductField .img {
+    margin: 20px 0;
+    animation: fade-in 1s ease-in-out;
+}
+
+.ProductField img {
+    max-width: 100%;
+}
+
+.ProductField h2 {
+    font-size: 24px;
+    margin: 10px 0;
+    animation: fade-in 1s ease-in-out;
+    color: #fff;
+}
+
+.ProductField form {
+    margin-top: 20px;
+    animation: fade-in 1s ease-in-out;
+}
+
+.ProductField form button.registerbtn {
+    background-color: #fff;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.ProductField form button.registerbtn:hover {
+    background-color: #555;
+    color: #fff;
+    animation: none;
+    transform: scale(1.05);
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .navbar-brand {
+        font-size: 18px;
+    }
+
+    .navbar-menu li {
+        margin-right: 5px;
+    }
+
+    .Midle h1 {
+        font-size: 36px;
+    }
+
+    .Down h1 {
+        font-size: 28px;
+    }
+
+    .ProductField h1 {
+        font-size: 20px;
+    }
+
+    .ProductField h2 {
+        font-size: 20px;
+    }
+
+	.ProductField form button.registerbtn {
+		font-size: 16px;
+		padding: 10px 20px;
+	}
+}
+
+
+
+
+
+    
